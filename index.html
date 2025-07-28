@@ -1,21 +1,62 @@
 
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>YELA TEC</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>YELA TEC PRO GERF</title>
+<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="contenedor">
-    <h1>Bienvenidos a YELA TEC</h1>
-    <p>Explora nuestras plataformas educativas</p>
-    <div class="botones">
-      <a href="docente.html" class="btn">👩‍🏫 Docente</a>
-      <a href="pro.html" class="btn">🚀 YELA TEC PRO</a>
+  <header>
+    <h1 class="logo-3d">YELA TEC PRO GERF</h1>
+  </header>
+
+  <nav class="menu">
+    <button id="btn-docente">👨‍🏫 Docente</button>
+    <button id="btn-estudiante">🧑‍🎓 Estudiante</button>
+    <button id="btn-idioma">🌐 Cambiar idioma</button>
+    <button id="btn-microfono">🎤 Micrófono</button>
+    <button id="btn-texto">⌨️ Texto</button>
+  </nav>
+
+  <!-- Sección docente con acceso por clave -->
+  <section id="seccion-docente" class="oculto">
+    <h2>🔐 Acceso Docente</h2>
+    <input type="password" id="clave-docente" placeholder="Clave secreta" />
+    <button id="btn-verificar">Entrar</button>
+    <div id="panel-docente" class="oculto">
+      <h3>🎓 Panel Docente</h3>
+      <p>Bienvenido al panel exclusivo para docentes.</p>
     </div>
-  </div>
-  <script src="script.js"></script>
+  </section>
+
+  <!-- Sección estudiante con las aves -->
+  <section id="seccion-estudiante" class="oculto">
+    <h2>🦜 Aves Interactivas</h2>
+    <div id="ave-reinita" class="ave">
+      <h3>Reinita Amarilla</h3>
+      <button class="hablar-btn" data-ave="reinita">🎤 Hablar con Reinita</button>
+      <p id="texto-reinita"></p>
+    </div>
+    <div id="ave-colibri" class="ave">
+      <h3>Colibrí Garganta de Rubí</h3>
+      <button class="hablar-btn" data-ave="colibri">🎤 Hablar con Colibrí</button>
+      <p id="texto-colibri"></p>
+    </div>
+  </section>
+
+  <!-- Entrada de texto -->
+  <section id="seccion-texto" class="oculto">
+    <h2>✍️ Entrada de Texto</h2>
+    <textarea id="input-texto" rows="4" placeholder="Escribe aquí..."></textarea>
+    <button id="btn-enviar-texto">Enviar</button>
+    <p id="respuesta-texto"></p>
+  </section>
+
+  <!-- Estado micrófono -->
+  <p id="estado-microfono" class="oculto">🎧 Escuchando...</p>
+
+<script src="script.js"></script>
 </body>
 </html>
