@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>YELA TEC PRO</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1 class="titulo">🌎 YELA TEC PRO</h1>
+    <p class="subtitulo">Educación ecológica avanzada con inteligencia artificial offline</p>
+  </header>
+
+  <main>
+    <section class="opciones">
+      <h2>Elige tu modo de interacción</h2>
+      <div class="botones">
+        <button onclick="irADocente()">👩‍🏫 Modo Docente PRO</button>
+        <button onclick="irAEstudiante()">🧒 Modo Estudiante PRO</button>
+      </div>
+    </section>
+
+    <section class="info">
+      <h3>🌟 Novedades YELA TEC PRO:</h3>
+      <ul>
+        <li>🗣️ Reconocimiento de voz sin internet</li>
+        <li>🎙️ Guías interactivos: Reinita y Colibrí</li>
+        <li>🦜 Imágenes y sonidos reales de aves</li>
+        <li>🔐 Menú oculto para docentes con clave</li>
+        <li>🧠 Educación ecológica inmersiva</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>💚 Proyecto educativo sin fines de lucro – Código abierto MIT</p>
+    <p>Hecho con amor para la fauna de Panamá 🇵🇦</p>
+  </footer>
+
+  <script>
+    function irADocente() {
+      window.location.href = "docente.html";
+    }
+
+    function irAEstudiante() {
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>
