@@ -1,25 +1,32 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Modo Docente PRO</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Acceso Docente</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>🔐 Área Docente</h1>
-  <div id="login">
-    <p>Introduce tu clave de acceso:</p>
-    <input type="password" id="claveDocente">
-    <button onclick="verificarClave()">Entrar</button>
+  <div class="contenedor">
+    <h1>Acceso exclusivo para docentes</h1>
+    <input type="password" id="clave" placeholder="Ingresa tu clave" />
+    <button onclick="verificarClave()">Ingresar</button>
+    <p id="mensaje"></p>
   </div>
-  <div id="contenidoDocente" style="display:none;">
-    <h2>📊 Herramientas para docentes</h2>
-    <ul>
-      <li>Ver progreso de estudiantes</li>
-      <li>Acceder a todas las fichas educativas</li>
-      <li>Modo presentación para clases</li>
-    </ul>
-  </div>
-  <script src="script.js"></script>
+  <script>
+    function verificarClave() {
+      const claveCorrecta = "docente.YELA.TEC.2025";
+      const entrada = document.getElementById("clave").value;
+      const mensaje = document.getElementById("mensaje");
+
+      if (entrada === claveCorrecta) {
+        mensaje.innerText = "✔️ Acceso concedido";
+        window.location.href = "https://yela-tec-web.vercel.app/docente-panel";
+      } else {
+        mensaje.innerText = "❌ Clave incorrecta";
+      }
+    }
+  </script>
 </body>
 </html>
