@@ -1,142 +1,67 @@
-
-/* Reset y básicos */
-* {
-  margin: 0; padding: 0; box-sizing: border-box;
-}
-
+/* Fondo elegante con gradientes y circuitos simulados */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
   background: radial-gradient(circle at center, #0b0f1a 0%, #06080d 100%);
-  color: #eee;
-  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  overflow: hidden;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  padding: 1rem;
+  justify-content: center;
 }
 
-/* Logo 3D rojo rubí translúcido con borde dorado */
-.logo-3d {
-  font-size: 5rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: rgba(220, 20, 60, 0.85);
-  background:
-    repeating-radial-gradient(circle at 10% 50%, rgba(255, 215, 0, 0.6) 0 2px, transparent 2px 6px),
-    repeating-linear-gradient(45deg, rgba(255, 215, 0, 0.4) 0 1px, transparent 1px 4px),
-    linear-gradient(90deg, #b22222, #8b0000);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow:
-    0 0 5px rgba(255, 215, 0, 0.8),
-    0 0 10px rgba(255, 215, 0, 0.7),
-    0 0 20px rgba(255, 215, 0, 0.6),
-    2px 2px 3px rgba(0,0,0,0.7),
-    4px 4px 5px rgba(0,0,0,0.6);
-  filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.6));
-  user-select: none;
-  cursor: default;
-  transition: transform 0.3s ease;
-  margin-bottom: 2rem;
-}
-
-.logo-3d:hover {
-  transform: scale(1.1) rotateY(15deg);
-  filter: drop-shadow(4px 4px 8px rgba(0,0,0,0.9));
-}
-
-/* Menu */
-.menu {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-.menu button {
-  background: linear-gradient(45deg, #b22222, #ffd700);
-  border: none;
-  border-radius: 10px;
-  padding: 0.7rem 1.2rem;
-  color: #000;
-  font-weight: 700;
-  font-size: 1rem;
-  cursor: pointer;
-  box-shadow:
-    0 2px 5px rgba(255, 215, 0, 0.5);
-  transition: background 0.3s ease;
-}
-
-.menu button:hover {
-  background: linear-gradient(45deg, #ffd700, #b22222);
-  color: #111;
-}
-
-/* Oculto */
-.oculto {
-  display: none;
-}
-
-/* Secciones */
-section {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 1rem 2rem;
-  border-radius: 12px;
-  width: 90vw;
-  max-width: 600px;
-  box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
-  margin-bottom: 2rem;
-}
-
-/* Aves */
-.ave {
-  background: rgba(220,20,60,0.1);
-  border-radius: 10px;
-  margin: 1rem 0;
-  padding: 1rem;
-  box-shadow: 0 0 15px rgba(220, 20, 60, 0.5);
-}
-
-.ave h3 {
-  color: #ffd700;
-  margin-bottom: 0.5rem;
-}
-
-/* Botones de hablar */
-.hablar-btn {
-  background: linear-gradient(45deg, #b22222, #ffd700);
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 700;
-  color: #000;
-  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.7);
-  transition: background 0.3s ease;
-}
-
-.hablar-btn:hover {
-  background: linear-gradient(45deg, #ffd700, #b22222);
-  color: #111;
-}
-
-/* Textarea */
-textarea {
-  width: 100%;
-  border-radius: 8px;
-  padding: 0.8rem;
-  font-size: 1rem;
-  border: none;
-  box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
-  resize: vertical;
-  margin-bottom: 1rem;
-}
-
-/* Estado micrófono */
-#estado-microfono {
-  font-size: 1.2rem;
-  color: #ffd700;
-  font-weight: 700;
+/* Contenedor centrado */
+.container {
   text-align: center;
-  margin-bottom: 1rem;
+  position: relative;
+  z-index: 10;
+}
+
+/* Logo 3D rojo rubí con borde dorado y efecto de profundidad */
+.logo-3d {
+  font-size: 4em;
+  font-weight: 900;
+  color: rgba(255, 0, 60, 0.85); /* rojo rubí traslúcido */
+  text-shadow:
+    0 1px 0 #ffd700,        /* borde dorado base */
+    0 2px 0 #ffd700,
+    0 3px 5px rgba(0, 0, 0, 0.8),  /* sombra profunda */
+    0 0 15px rgba(255, 0, 60, 0.4); /* brillo rubí */
+  letter-spacing: 4px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Texto secundario */
+.subtext {
+  font-size: 1.2em;
+  color: #ccc;
+  margin-top: 10px;
+  text-shadow: 0 1px 3px #000;
+}
+
+/* Circuitos simulados como decoración animada */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://www.transparenttextures.com/patterns/circuits.png');
+  opacity: 0.03;
+  z-index: 1;
+}
+
+/* Efecto de iluminación profesional */
+.container::before {
+  content: "";
+  position: absolute;
+  top: -30%;
+  left: -30%;
+  width: 160%;
+  height: 160%;
+  background: radial-gradient(circle at center, rgba(255, 0, 60, 0.1), transparent 70%);
+  z-index: 0;
+  pointer-events: none;
 }
