@@ -49,4 +49,4 @@ Este proyecto está diseñado para mejorar la educación digital con tecnología
 ---
 
 **Autor:** Guillermo Antonio  
-**Licencia:** MIT
+**Licencia:** MIT.
