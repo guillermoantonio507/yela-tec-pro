@@ -1,0 +1,28 @@
+!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YELA TEC</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="intro">
+    <h1 class="logo">YELA TEC</h1>
+  </div>
+  <div class="menu">
+    <button onclick="mostrarLogin('docente')">👨‍🏫 Docente</button>
+    <button onclick="mostrarLogin('estudiante')">🧑‍🎓 Estudiante</button>
+    <button onclick="cambiarIdioma()">🌐 Cambiar idioma</button>
+    <button onclick="activarMicrofono()">🎤 Activar micrófono</button>
+  </div>
+
+  <div id="login" style="display:none">
+    <h2 id="bienvenida"></h2>
+    <input type="password" placeholder="Clave secreta" id="clave" />
+    <button onclick="verificarClave()">Entrar</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
