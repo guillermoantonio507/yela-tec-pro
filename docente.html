@@ -1,19 +1,25 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Panel Docente - YELA TEC</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Modo Docente PRO</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>🎓 Panel Docente</h1>
-  </header>
-  <main class="container">
-    <p>Bienvenido al área exclusiva para docentes.</p>
-    <p>Aquí podrás gestionar tu contenido, revisar estudiantes y más.</p>
-    <button onclick="window.location.href='index.html'">Cerrar sesión</button>
-  </main>
+  <h1>🔐 Área Docente</h1>
+  <div id="login">
+    <p>Introduce tu clave de acceso:</p>
+    <input type="password" id="claveDocente">
+    <button onclick="verificarClave()">Entrar</button>
+  </div>
+  <div id="contenidoDocente" style="display:none;">
+    <h2>📊 Herramientas para docentes</h2>
+    <ul>
+      <li>Ver progreso de estudiantes</li>
+      <li>Acceder a todas las fichas educativas</li>
+      <li>Modo presentación para clases</li>
+    </ul>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
