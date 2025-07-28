@@ -1,33 +1,36 @@
+
 body {
+  margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to right, #e0f7fa, #e8f5e9);
-  padding: 20px;
-  color: #2e7d32;
-  text-align: center;
-}
-
-button {
-  padding: 10px 20px;
-  margin: 10px;
-  font-size: 1.1em;
-  border: none;
-  background-color: #66bb6a;
+  background: linear-gradient(to right, #004d7a, #008793);
   color: white;
+  text-align: center;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.contenedor {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 2em;
+  border-radius: 1em;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+.btn, button {
+  margin: 1em;
+  padding: 1em 2em;
+  background: #ffcc00;
+  border: none;
   border-radius: 10px;
+  font-weight: bold;
+  color: #003049;
   cursor: pointer;
+  transition: transform 0.2s;
+  text-decoration: none;
 }
 
-button:hover {
-  background-color: #388e3c;
-}
-
-h1, h2 {
-  color: #1b5e20;
-}
-
-input[type="password"] {
-  padding: 8px;
-  font-size: 1em;
-  border-radius: 5px;
-  border: 1px solid #aaa;
+.btn:hover, button:hover {
+  transform: scale(1.05);
 }
