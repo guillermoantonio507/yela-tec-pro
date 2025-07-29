@@ -9,35 +9,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-/* Contenedor centrado */
-.container {
-  text-align: center;
   position: relative;
-  z-index: 10;
-}
-
-/* Logo 3D rojo rubí con borde dorado y efecto de profundidad */
-.logo-3d {
-  font-size: 4em;
-  font-weight: 900;
-  color: rgba(255, 0, 60, 0.85); /* rojo rubí traslúcido */
-  text-shadow:
-    0 1px 0 #ffd700,        /* borde dorado base */
-    0 2px 0 #ffd700,
-    0 3px 5px rgba(0, 0, 0, 0.8),  /* sombra profunda */
-    0 0 15px rgba(255, 0, 60, 0.4); /* brillo rubí */
-  letter-spacing: 4px;
-  transition: all 0.3s ease-in-out;
-}
-
-/* Texto secundario */
-.subtext {
-  font-size: 1.2em;
-  color: #ccc;
-  margin-top: 10px;
-  text-shadow: 0 1px 3px #000;
 }
 
 /* Circuitos simulados como decoración animada */
@@ -53,7 +25,14 @@ body::before {
   z-index: 1;
 }
 
-/* Efecto de iluminación profesional */
+/* Contenedor centrado */
+.container {
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+/* Efecto de iluminación profesional detrás del logo */
 .container::before {
   content: "";
   position: absolute;
@@ -64,4 +43,45 @@ body::before {
   background: radial-gradient(circle at center, rgba(255, 0, 60, 0.1), transparent 70%);
   z-index: 0;
   pointer-events: none;
+}
+
+/* Logo 3D rojo rubí con borde dorado y efecto de profundidad */
+.logo-3d {
+  font-size: 4em;
+  font-weight: 900;
+  color: rgba(255, 0, 60, 0.85); /* rojo rubí traslúcido */
+  text-shadow:
+    0 1px 0 #ffd700,            /* borde dorado base */
+    0 2px 0 #ffd700,
+    0 3px 5px rgba(0, 0, 0, 0.8),  /* sombra profunda */
+    0 0 15px rgba(255, 0, 60, 0.4); /* brillo rubí */
+  letter-spacing: 4px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Texto secundario */
+.subtext {
+  font-size: 1.2em;
+  color: #ccc;
+  margin-top: 10px;
+  text-shadow: 0 1px 3px #000;
+}
+
+/* Responsivo para móviles */
+@media screen and (max-width: 600px) {
+  .logo-3d {
+    font-size: 2em;
+    letter-spacing: 2px;
+  }
+
+  .subtext {
+    font-size: 1em;
+  }
+}
+
+/* Responsivo para pantallas grandes */
+@media screen and (min-width: 1200px) {
+  .logo-3d {
+    font-size: 5em;
+  }
 }
