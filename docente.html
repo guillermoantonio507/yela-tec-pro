@@ -4,27 +4,67 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Acceso Docente</title>
+  <title>Acceso Docente - YELA TEC</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="contenedor">
     <h1>Acceso exclusivo para docentes</h1>
+
     <input type="password" id="clave" placeholder="Ingresa tu clave" />
     <button onclick="verificarClave()">Ingresar</button>
+
+    <div id="nombreDocenteDiv" style="margin-top: 20px; display: none;">
+      <input type="text" id="nombreDocente" placeholder="Escribe tu nombre como docente" />
+      <button onclick="guardarNombre()">Guardar nombre</button>
+    </div>
+
+    <div id="cambiarClaveDiv" style="margin-top: 20px; display: none;">
+      <input type="password" id="nuevaClave" placeholder="Nueva clave personal" />
+      <button onclick="cambiarClave()">Cambiar clave</button>
+    </div>
+
     <p id="mensaje"></p>
   </div>
+
   <script>
     function verificarClave() {
-      const claveCorrecta = "docente.YELA.TEC.2025";
+      const clavePorDefecto = "docente.YELA.TEC.2025";
+      const claveGuardada = localStorage.getItem("claveDocente") || clavePorDefecto;
       const entrada = document.getElementById("clave").value;
       const mensaje = document.getElementById("mensaje");
 
-      if (entrada === claveCorrecta) {
+      if (entrada === claveGuardada) {
         mensaje.innerText = "✔️ Acceso concedido";
-        window.location.href = "https://yela-tec-web.vercel.app/docente-panel";
+        document.getElementById("nombreDocenteDiv").style.display = "block";
+        document.getElementById("cambiarClaveDiv").style.display = "block";
+
+        // Redireccionar con retardo para asegurar flujo correcto
+        setTimeout(() => {
+          window.location.href = "https://yela-tec-web.vercel.app/docente-panel";
+        }, 2000);
       } else {
         mensaje.innerText = "❌ Clave incorrecta";
+      }
+    }
+
+    function guardarNombre() {
+      const nombre = document.getElementById("nombreDocente").value.trim();
+      if (nombre) {
+        localStorage.setItem("nombreDocente", nombre);
+        alert("✅ Nombre guardado: " + nombre);
+      } else {
+        alert("⚠️ Por favor escribe tu nombre.");
+      }
+    }
+
+    function cambiarClave() {
+      const nuevaClave = document.getElementById("nuevaClave").value.trim();
+      if (nuevaClave.length >= 6) {
+        localStorage.setItem("claveDocente", nuevaClave);
+        alert("🔐 Clave actualizada correctamente.");
+      } else {
+        alert("❌ La nueva clave debe tener al menos 6 caracteres.");
       }
     }
   </script>
